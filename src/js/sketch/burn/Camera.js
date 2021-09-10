@@ -14,6 +14,8 @@ export default class Camera extends THREE.PerspectiveCamera {
     this.lookAt(new THREE.Vector3());
   }
   update(time) {
+    // 업데이트
+    
   }
   resize(resolution) {
     this.aspect = resolution.x / resolution.y;
