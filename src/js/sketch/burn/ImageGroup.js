@@ -36,6 +36,7 @@ export default class ImageGroup extends THREE.Group {
     this.timeTransition += time;
 
     if (this.timeTransition / DURATION >= 1) {
+      // return;
       this.timeTransition = 0;
       this.children[0].changeTex();
       this.children[0].update(time, 0);
@@ -54,6 +55,8 @@ export default class ImageGroup extends THREE.Group {
       (camera.position.z - this.position.z) * Math.tan(MathEx.radians(camera.fov) / 2) * 2
     );
     const width = height * camera.aspect;
+    console.log(width)
+    console.log(height)
 
     this.margin.set(
       (resolution.x > resolution.y) ? resolution.y * 0.2 : resolution.x * 0.1,
